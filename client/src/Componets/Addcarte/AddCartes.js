@@ -1,6 +1,8 @@
 import React, { useState} from 'react';
 import "./adcartes.css"
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function AddCartes() {
@@ -13,6 +15,9 @@ function AddCartes() {
 
 
   const handleAddCard = async () => {
+    if (!title || !image || !price || !quantity) {
+      return toast.error('Please fill Title, Image , Price and quantity');
+    }
     const newCard = {
       title: title,
       image: image,
@@ -20,22 +25,27 @@ function AddCartes() {
       quantity: quantity
     };
 
+    toast.success("welcome");
+
     try {
       const response = await axios.post('http://localhost:5000/cards', newCard);
-      setCards([...cards, response.data]);
+      setCards([...cards,response.data ] );
       setTitle('');
       setImage('');
       setPrice(0);
       setQuantity(0);
+
     } catch (error) {
       console.log(error);
     }
   };
-
+  
+  
 
 
   return (
     <div class='addcartes'>
+      <ToastContainer position="bottom-center" limit={1} />
       <h2>Ajouter un produit</h2>
       <input type="text" placeholder="Titre" value={title} onChange={(e) => setTitle(e.target.value)} />
       <input type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />

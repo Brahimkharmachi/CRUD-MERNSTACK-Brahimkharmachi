@@ -76,8 +76,8 @@ const Homees = () => {
       </div>
        
       <div>
-        <div class="nosproduits">
-          <p >Nos produits</p>
+        <div class="theproducts">
+          <p >Nos Produits</p>
         </div>
 
         <div class='search'>
@@ -92,10 +92,10 @@ const Homees = () => {
             <img src={card.image} alt={card.title} style={{ width: '100px' }} />
             <p class='sarouel'>{card.title}</p>
             <p class='price'>Prix: {card.price} €</p>
-            <div class='btnquantite'>
-            <button class='quantite' onClick={() => handleUpdateCard(card._id, { ...card, quantity: card.quantity - 1 })}>-</button>
-            <p class='nquantite'>{card.quantity}</p>
-            <button class='quantite' onClick={() => handleUpdateCard(card._id, { ...card, quantity: card.quantity + 1 })}>+</button>
+            <div class='btnquantity'>
+            <button class='quantity' onClick={() => handleUpdateCard(card._id, { ...card, quantity: card.quantity - 1 })}>-</button>
+            <p class='nquantity'>{card.quantity}</p>
+            <button class='quantity' onClick={() => handleUpdateCard(card._id, { ...card, quantity: card.quantity + 1 })}>+</button>
             </div>
             <MDBBtn className='btn'  onClick={() => handleAddToBasket(card)}>Ajouter à mon panier</MDBBtn>
             <MDBBtn className='btn' onClick={() => handleDeleteCard(card._id)}>Supprimer la carte</MDBBtn>

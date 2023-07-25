@@ -60,19 +60,19 @@
     width: 248px !important;
   }
 
-  .btnquantite {
+  .btnquantity {
     display: flex;
     grid-gap:7px;
     justify-content: center;
     
   }
 
-  .quantite {
+  .quantity {
     width: 35px;
     border-radius: 0px;
   }
 
-  .nquantite {
+  .nquantity {
     font-size: 16px;
     font-family: "Marcellus", serif;
     font-weight: bold;
@@ -80,7 +80,7 @@
     top: 7px;
   }
 
-  .nosproduits p {
+  .theproducts p {
     color: #13243F;
     font-size: 36px;
     font-family: "Marcellus", serif;
